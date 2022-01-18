@@ -12,6 +12,6 @@ app.use(express.json());
 app.set("view engine", "ejs"); // root directory for views views/
 app.use(express.static("public"));
 
-app.use("/users", userController);
+app.use("/index", userController);
 
 module.exports = app;
