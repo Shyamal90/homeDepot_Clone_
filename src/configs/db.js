@@ -1,6 +1,5 @@
-const { MongoTopologyClosedError } = require("mongodb/lib")
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
-module.exports=()=>{
-    return mongoose.connect("mongodb+srv://rajnarayana:1602raj@cluster0.u5gd4.mongodb.net/homeDepot-clone?retryWrites=true&w=majority")
-}
+module.exports = () => {
+  return mongoose.connect("mongodb://127.0.0.1:27017/web13-ejs");
+};

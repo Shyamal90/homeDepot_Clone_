@@ -1,18 +1,17 @@
-const express=require("express");
-
-
-
-
-const app=express()
-app.use(express.json())
+const express = require("express");
 
 const userController = require("./controllers/user.controller");
-const productController=require("./controllers/product.controller");
 
-app.use("/products",productController)
-app.use("/users",userController);
+const app = express();
 
+// for parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
+app.use(express.json());
 
+app.set("view engine", "ejs"); // root directory for views views/
+app.use(express.static("public"));
 
-module.exports=app;
+app.use("/users", userController);
+
+module.exports = app;
