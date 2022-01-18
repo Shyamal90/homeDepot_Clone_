@@ -1,11 +1,11 @@
 const express=require("express")
-const Product=require("../models/product.model")
+const Rating=require("../models/rating.model")
 const router=express.Router()
 
 router.get("",async(req,res)=>{
     try{
-        const products= await Product.find().lean().exec()
-        return res.send(products)
+        const ratings= await Rating.find().lean().exec()
+        return res.send(ratings)
     }
     catch(err){
      return res.status(500).json({error:err.message})
@@ -14,8 +14,8 @@ router.get("",async(req,res)=>{
 });
 router.post("",async(req,res)=>{  //creating documents
     try{
-        const products=await Product.create(req.body)
-        return res.status(201).send(products)
+        const ratings=await Rating.create(req.body)
+        return res.status(201).send(ratings)
     }
     catch(err){
         console.log(err.message)
