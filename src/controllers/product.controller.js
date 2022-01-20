@@ -1,24 +1,18 @@
 const express=require("express")
 const Product=require("../models/product.model")
+const crudController = require("./crud.controller");
 const router=express.Router()
 
-router.get("",async(req,res)=>{
-    try{
-        const products= await Product.find().lean().exec()
-        return res.send(products)
-    }
-    catch(err){
-     return res.status(500).json({error:err.message})
-    }
-   
-});
-router.post("",async(req,res)=>{  //creating documents
-    try{
-        const products=await Product.create(req.body)
-        return res.status(201).send(products)
-    }
-    catch(err){
-        console.log(err.message)
-    }
+router.post("", crudController(Product).post);
+
+router.get("", crudController(Product).get);
+router.get("/all", crudController(Product).getpro);
+router.get("/description",async(req,res)=>{
+    
+        res.render('product_description.ejs',)
+
 })
+router.get("/:id", crudController(Product).getOne);
+router.patch("/:id", crudController(Product).updateOne);
+router.delete("/:id", crudController(Product).deleteOne);
 module.exports=router;
