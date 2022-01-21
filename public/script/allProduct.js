@@ -1,45 +1,52 @@
 
 
-const data=async ()=>{
-    const response=await fetch("http://localhost:2345/products/all")
-    let productsData=await response.json()
-    let allproductsData = JSON.parse(localStorage.getItem("products")); 
-    displayData(productsData);
-  }
-  data();
+  data= async(page,size)=>{
+//    console.log("page","size",page,size)
+   const response=await fetch(`http://localhost:2345/products/all?page=${page}&size=${size}`)
+   let productsData=await response.json()
+   console.log("productData",productsData)
+   displayData(productsData);
+  
+//    localStorage.setItem("productsData",JSON.stringify(productsData))
+}
+//   data();
 
-
-
-
+  let allproductData = JSON.parse(localStorage.getItem("productsData"));
+   console.log("allproductData",allproductData)
 document.querySelector("#sortEl").addEventListener("change",()=>{
     let value = document.querySelector("#sortEl").value;
-    console.log(value);
+   
+  
 
-
-    if(value === "low"){
+      if(value === "low"){
         // console.log("hi");
-        let newArr = productsData.sort((a,b)=>{
-            return a.price - b.price;
+        let newArr =allproductData.sort((a,b)=>{
+            return a.current_price - b.current_price;
         })
         // console.log(newArr);
         displayData(newArr);
     }else if(value === "high"){
         // console.log("hello");
-        let newArr = productsData.sort((a,b)=>{
-            return b.price - a.price;
+        let newArr = allproductData.sort((a,b)=>{
+            return b.current_price - a.current_price;
         })
         // console.log(newArr);
         displayData(newArr);
-    }else if(value === "bestMatch"){
-        displayData(productsData);
+    }else if(value === "topRate"){
+        let newArr = allproductData.sort((a,b)=>{
+            return b.rating - a.rating;
+        })
+        displayData(newArr);
     }
+    else if(value === "mostpopular"){
+        let newArr = allproductData.sort((a,b)=>{
+            return b.favorite-a.favorite;
+        })
+        displayData(newArr);
+    }
+  
 })
 
-
-
-
-
- 
 
 function displayData(productArr){
     document.querySelector(".product-container").innerHTML = "";
@@ -52,22 +59,39 @@ function displayData(productArr){
         let img = document.createElement("img");
         img.setAttribute("class","productImg")
         img.setAttribute("src",productData.main_image);
+        img.addEventListener("click",()=>{
+            window.location.href = "http://localhost:2345/products/description";
+            localStorage.setItem("products",JSON.stringify(productData));
+            
+        })
         
         // Heart Logo Design
         
-        
+        let favorite_div=document.createElement("div")
+        favorite_div.setAttribute("class","favorite_div")
+
         let heartLogo = document.createElement("img");
         heartLogo.setAttribute("class","heartLogo");
         heartLogo.setAttribute("src","https://assets.thdstatic.com/images/v1/favorite_default.svg");
+        let favorites=document.createElement("p")
+        favorites.setAttribute("class","favorites")
+        favorites.innerHTML=productData.favorite;
+
+        favorite_div.append(heartLogo,favorites)
         
         let color_container = document.createElement("div");
         color_container.setAttribute("class","color_container");
         
         let firstBox = document.createElement("div");
         firstBox.setAttribute("class","firstBox");
-        
+        let colour_btn1=document.createElement("img")
+        colour_btn1.setAttribute("src",productData.colour_btn1)
+        firstBox.append(colour_btn1)
         let secondBox = document.createElement("div");
         secondBox.setAttribute("class","secondBox");
+        let colour_btn2=document.createElement("img")
+        colour_btn2.setAttribute("src",productData.colour_btn2)
+        secondBox.append(colour_btn2)
         
         color_container.append(firstBox,secondBox);
         
@@ -80,7 +104,7 @@ function displayData(productArr){
         
         let modelNo = document.createElement("p");
         modelNo.setAttribute("class","modelNo");
-        modelNo.innerHTML = "by" + productData.manufacturer;
+        modelNo.innerHTML = "by" + " " +`<style font-size:bold></style>${productData.manufacturer}`;
         // console.log(product.model);
         
         // Rating star
@@ -169,7 +193,7 @@ function displayData(productArr){
         //     addToCartBtn.style.display="none";
         // })
         
-        product.append(img,heartLogo,color_container,title,modelNo,rating_div,priceDiv,pickUp,deliveryDiv,addToCartBtn);
+        product.append(img,favorite_div,color_container,title,modelNo,rating_div,priceDiv,pickUp,deliveryDiv,addToCartBtn);
         document.querySelector(".product-container").append(product);
         })
 }

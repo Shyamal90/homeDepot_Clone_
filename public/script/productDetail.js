@@ -76,7 +76,9 @@ function displayProduct(product){
     var poster4 = document.createElement("img");
     poster4.setAttribute("src", item.image_4);
 
- 
+    poster4.addEventListener("mouseover", function () {
+      productMain.setAttribute("src", item.image_4);
+    }); 
 
     prodImgLeft.append(poster1, poster2, poster3,poster4);
     var prodImgRight = document.createElement("div");

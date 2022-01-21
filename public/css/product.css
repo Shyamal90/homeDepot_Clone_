@@ -44,12 +44,11 @@
 
 .product{
     height: fit-content;
-    margin: 20px;
+    margin: 8px;
     overflow: hidden;
     border: 1px solid rgba(128, 128, 128, 0.281);
     background-color: white;
     text-align: center;
-    cursor: pointer;
     /* min-width: 300px; */
     position: relative;
     padding: 10px 10px 10px 10px;
@@ -58,19 +57,34 @@
 
 
 .productImg{
-    width: 55%;
+    width: 65%;
     height: 35%;
+    /* border:1px solid black; */
     object-fit: contain;
 }
-
-/* Heart Logo */
-.heartLogo{
-    background-color: rgba(233, 231, 231, 0.486);
-    position: absolute;
-    padding: 10px;
-    right: 0px;
-    border-radius: 45%;
+.productImg:hover{
+cursor: pointer;
 }
+
+.favorite_div{
+    display: flex;
+    background-color: rgba(233, 231, 231, 0.486);
+   height:20px;
+   width:45px;
+  justify-content: space-between;
+  float: right;
+  padding: 4px;
+  border-radius: 40px;
+    
+}
+.favorites{
+    font-size: 12px;
+     padding-top: 2px;
+     color: #333;
+}
+
+
+
 
 .color_container{
     display: flex;
@@ -80,41 +94,52 @@
 }
 
 .firstBox,.secondBox{
-    /* border: 1px solid black; */
-    width: 30px;
-    height: 30px;
-    margin: 5px;
+    
+    width: 35px;
+    height: 35px;
+    margin: 3px;
     border-radius: 4px;
    
 }
 
-.firstBox{
-    background-color: brown;
-    margin-left: 0px;
-    
+.firstBox img{
+    height:28px;
+    width:28px;
+   
+    padding-top: 3px;
+    border-radius: 15%;
 }
-
-.secondBox{
-    background-color: gray;
+.secondBox img{
+    height:28px;
+    width:28px;
+    padding-top: 3px;
+    border-radius: 15%;
 }
 
 .firstBox:hover,.secondBox:hover{
-    border: 2px solid #f96302;
-    margin: 4px;
+    border: 1px solid #f96302;
+    cursor: pointer;
 }
 
 .product .title{
-    font-size: 12px;
+    font-size: 15px;
     text-align: left;
-    color: rgb(83, 83, 83);
+    
+    font-family: "helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif";
+    color: #333;
     /* border:1px solid red; */
     padding:10px 10px 10px 0px; 
 }
+.title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 .product .price{
-    color: teal;
+    color: #333;
+    font-size: 15px;
      padding: 10px ;
-     /* border:1px solid orangered */
+     border:1px solid orangered
 }
 
 .product .descrip{
@@ -124,7 +149,7 @@
 }
 
 .product .modelNo{
-    font-size: 10px;
+    font-size: 15px;
     text-align: left;
     /* border:1px solid green; */
     padding:0px 10px 10px 0px; 
@@ -146,11 +171,14 @@
 }
 
 .product .ratingCount{
-    margin: 10px 0px;
-    font-size: 11px;
+    margin: 12px 0px;
+    margin-left: 5px;
+    font-size: 12px;
     /* border: 1px solid red;; */
 }
-
+.ratingCount:hover{
+    text-decoration: underline;
+}
 .product .priceDiv{
     display: flex;
     font-size: 13px;
@@ -161,9 +189,10 @@
 /* PickUp section */
 .pickUp{
     display: flex;
+   
     margin: 18px 0px;
     font-size: 12px;
-    /* border:1px solid red; */
+    border:1px solid red;
 }
 
 .pickupHeading{
@@ -176,6 +205,7 @@
     display: flex;
     margin: 18px 0px;
     font-size: 12px;
+    border:1px solid green;
 }
 
 .deliveryheading{
@@ -189,9 +219,9 @@
     padding: 12px;
     font-size: 20px;
     width: 80%;
-    border: 2px solid #f96302;
+    border: 2px solid #ccc;
     background-color: rgb(248, 248, 248);
-    color: #f96302;
+    color: #ccc;
     cursor: pointer;
     /* position: absolute; */
     /* left: 42.5px; */
@@ -200,7 +230,7 @@
 
 
 .addToCartBtn:hover{
-    background-color:#f96302;
+    background-color:#ccc;
     color: white
     /* border:1px solid red */
 }
@@ -230,7 +260,7 @@
 
 }
 
-#first{
+.first{
     width: 19%;
   border: 1px solid grey;
     /* border-radius: 15px; */
@@ -238,3 +268,146 @@
    padding-top: 10px;
 }
 
+
+/* newly added items css */
+
+#container{
+    margin-top: 40px;
+    height:450px;
+    width:98%;
+    display: flex;
+   justify-content: space-between;
+   margin: auto;
+   
+}
+#productDiv{
+    height:440px;
+    width:220px;
+    /* border:1px solid green; */
+    margin-top: 5px;
+    margin-left: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-left: 10px;
+}
+p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#imgDiv img{
+    height:200px;
+    width:200px;
+    margin-top: 5px;
+    /* border: 1px solid  orangered; */
+}
+img:hover{
+ cursor: pointer;
+}
+
+#starDiv{
+    display: flex;
+    height:30px;
+    width:150px;
+   /* border:1px solid green */
+}
+#starDiv:hover{
+    cursor: pointer;
+}
+#starDiv span:hover{
+    text-decoration: underline;
+}
+i{
+color: orangered;
+}
+button{
+    height:40px;
+    width:200px;
+    background-color: white;
+    border: 3px solid orangered;
+    font-size: 20px;
+    color: orangered;
+}
+button:hover{
+    background-color: orangered;
+    color: white;
+}
+
+#related{
+  height:50px;
+  width:200px;
+  border:none;
+  margin: auto;
+ margin-top: 120px;
+  
+}
+#related h2{
+   font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+  color: #333;
+  font-family: helvetica-neue-light,Helvetica Neue,Helvetica,Arial,sans-serif;
+  border-bottom:3px solid orangered;
+}
+#related_searches{
+  height:50px;
+  width:1050px;
+  
+  margin: auto;
+  display: flex;
+  gap: 10px;
+
+}
+
+#relatedDiv{
+  margin-top: 10px;
+  margin: auto;
+height:40px;
+width:190px;
+border:1px solid grey;
+border-radius: 20px;
+text-align: center;
+color: #333;
+justify-content: space-evenly;
+background-color: white;
+ 
+}
+#relatedDiv img{
+ height:15px;
+ width:15px;
+ margin-top: 8px;
+ transform:rotate(270deg)
+  
+}
+#relatedDiv span:hover{
+  text-decoration: underline;
+}
+
+#relatedProducts{
+  height:360px;
+  width:80%;
+  
+  display: flex;
+  gap:15px;
+  margin:auto;
+  padding: 10px;
+}
+#relatedproductDiv{
+  height:360px;
+  width:320px;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2px;
+}
+#relatedproductDiv h4{
+  color:rgb(41, 39, 39);
+}
+
+#view{
+  margin-top: 10px;
+color: #3e7697;
+  
+}
+#view:hover{
+  cursor: pointer;
+  text-decoration:none;
+}
+/* ending added items css */

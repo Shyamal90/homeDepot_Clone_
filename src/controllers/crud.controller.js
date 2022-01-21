@@ -1,7 +1,11 @@
 
 const getAllpro = (model) => async (req, res) => {
+  // console.log("1")
   try {
-    const items = await model.find().lean().exec();
+    const page = +req.query.page || 1;
+    const size = +req.query.size || 5;
+    const skip = (page - 1) * size;
+    const items = await model.find().skip(skip).limit(size).lean().exec();
     
     return res.status(201).send( items );
      
