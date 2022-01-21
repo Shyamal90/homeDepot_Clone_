@@ -14,5 +14,14 @@ router.post("/",async(req,res)=>{
     }
 })
 
+router.get("/", async (req,res)=>{
+    try{
+        const user= await User.find().lean().exec();
+        return res.send(user)
+    }catch(err){
+        console.log(err)
+    }
+})
+
 
 module.exports = router;
