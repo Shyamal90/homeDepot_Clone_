@@ -96,7 +96,7 @@ function displayData(productArr){
         color_container.append(firstBox,secondBox);
         
         
-        let title = document.createElement("h3");
+        let title = document.createElement("p");
         title.setAttribute("class","title");
         title.innerHTML = productData.product_name;
         
@@ -128,17 +128,40 @@ function displayData(productArr){
         
         // Price Section
         
-        let price = document.createElement("h4");
+        let price = document.createElement("p");
         price.setAttribute("class","price");
-        price.innerHTML = "$" + productData.current_price;
-        
+        price.innerHTML = `<span class="dollar">$</span>` + productData.current_price;
+
+      let otherDiv=document.createElement("div")
+      otherDiv.setAttribute("class","otherDiv")
+
+
+        let old_price=document.createElement("p")
+        old_price.setAttribute("class","old_price")
+        old_price.innerHTML=`$${productData.old_price}`
+      
+    
+        let savingDiv=document.createElement("div")
+       savingDiv.setAttribute("class","savingDiv")
+
+        let saving_price=document.createElement("p")
+        saving_price.setAttribute("class","saving_price")
+        saving_price.innerHTML=`Save $${productData.saving}`
+
+        let percentage=document.createElement("p")
+        percentage.setAttribute("class","percentage")
+        percentage.innerHTML=`(${productData.percentage}%)`
+
+       
+       savingDiv.append(saving_price,percentage)
+       otherDiv.append(old_price,savingDiv)
         let priceLogo = document.createElement("img");
         priceLogo.setAttribute("class","priceLogo");
         priceLogo.setAttribute("src","	https://assets.thdstatic.com/images/v1/Value-Pricing-Special-Buy.svg");
         
         let priceDiv = document.createElement("div");
         priceDiv.setAttribute("class","priceDiv");
-        priceDiv.append(priceLogo,price);
+        priceDiv.append(priceLogo,price,otherDiv);
         
         // let descrip = document.createElement("p");
         // descrip.setAttribute("class","descrip");
@@ -147,7 +170,9 @@ function displayData(productArr){
         // PickUp Section
         let pickUp = document.createElement("div");
         pickUp.setAttribute("class","pickUp");
-        
+
+
+
         let crossImg = document.createElement("img");
         crossImg.setAttribute("class","crossImg");
         crossImg.setAttribute("src","https://assets.thdstatic.com/images/v1/close-x-black.svg");
@@ -169,7 +194,8 @@ function displayData(productArr){
         
         let deliveryHeading = document.createElement("div");
         deliveryHeading.setAttribute("class","Heading");
-        deliveryHeading.innerHTML = `<span class="deliveryheading">Delivery</span>` + productData.delivery;
+        deliveryHeading.innerHTML = `<span class="deliveryheading">Delivery</span>` + productData.delivery+
+        `<img src="https://assets.homedepot-static.com/images/v1/info.svg">`;
         
         deliveryDiv.append(anotherCross,deliveryHeading)
         

@@ -141,7 +141,7 @@
     height: 40px;
     position: relative;
     top: 5px;
-    background-color: tomato;
+    background-color: #F96302;
     margin-left: 0px;
 }
 
@@ -237,13 +237,14 @@
 .nav_catagory{
     /* border: 1px solid black; */
     /* margin: 10px; */
-    /* background-color: white; */
+    background-color: white;
 }
 
 .nav_catagory ul{
     display: flex;
     justify-content: space-evenly;
-    background-color: white;
+    margin-top: 10px;
+    /* background-color: white; */
     height: 30px;
 }
 

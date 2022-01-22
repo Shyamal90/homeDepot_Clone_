@@ -1,8 +1,12 @@
+body{
+font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
 .productBanner{
     margin: 50px;
-    /* width: 980px; */
     border: 1px solid rgba(250, 179, 167, 0.349);
 }
+
 .container{
     overflow: hidden;
     /* width: max-content; */
@@ -122,7 +126,7 @@ cursor: pointer;
 }
 
 .product .title{
-    font-size: 15px;
+    font-size: 16px;
     text-align: left;
     
     font-family: "helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif";
@@ -137,11 +141,36 @@ cursor: pointer;
 
 .product .price{
     color: #333;
-    font-size: 15px;
-     padding: 10px ;
-     border:1px solid orangered
+    font-size: 20px;
+    font-weight: bold;
+     margin-left: 10px;
+     /* padding: 10px ; */
+     /* border:1px solid orangered */
 }
-
+.priceLogo{
+    height:30px;
+    width:30px;
+}
+.dollar{
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+}
+.old_price{
+    text-align: left;
+    text-decoration:line-through ;
+}
+.savingDiv{
+    display: flex;
+    gap:5px;
+    color: green;
+}
+.otherDiv{
+    display: flex;
+    margin-left: 7px;
+    gap:2px;
+    flex-direction: column;
+}
 .product .descrip{
     color: rgb(177, 176, 176);
     border:1px solid orangered
@@ -149,15 +178,16 @@ cursor: pointer;
 }
 
 .product .modelNo{
-    font-size: 15px;
+    font-size: 12px;
     text-align: left;
     /* border:1px solid green; */
-    padding:0px 10px 10px 0px; 
+    /* padding:0px 10px 10px 0px;  */
 }
 
 .product .rating_div{
     display: flex;
     align-items: center;
+
 }
 
 .product .stars{
@@ -165,7 +195,7 @@ cursor: pointer;
     font-size: 14px;
     text-align: left;
     display: flex;
-    padding:10px 1px 10px 0px; 
+    /* padding:10px 1px 10px 0px;  */
     /* border:1px solid  yellow */
     
 }
@@ -189,28 +219,50 @@ cursor: pointer;
 /* PickUp section */
 .pickUp{
     display: flex;
-   
-    margin: 18px 0px;
-    font-size: 12px;
-    border:1px solid red;
+   gap: 10px;
+    padding-bottom: 5px;
+}
+.pickUpDiv{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    font-size: 13px;
+    color: #666;
+    gap:3px;
 }
 
 .pickupHeading{
-    /* display: block; */
-    margin: 0px 10px;
+    font-size: 15px;
+    color: #333;
+    gap:5px;
 }
 
 /* Delivery Section */
 .deliveryContainer{
     display: flex;
-    margin: 18px 0px;
-    font-size: 12px;
-    border:1px solid green;
+    gap:10px;
+    /* border:1px solid green; */
 }
-
+.Heading{
+    font-size: 13px;
+    color: #666;
+    gap:7px;
+}
+.Heading img{
+    padding-left:5px;
+   height:12px;
+   
+}
+.Heading img:hover{
+    cursor: pointer;
+}
 .deliveryheading{
-    margin: 0px 10px;
-    background-color: transparent;
+    display: flex;
+    text-align: left;
+   font-size: 15px;
+   color: #333;
+    flex-direction: column;
+    gap:3px;
 }
 
 .addToCartBtn{
@@ -252,8 +304,8 @@ cursor: pointer;
 }
 .pages{
     height:40px;
-    width:240px;
-    border:1px solid  grey;
+    width:180px;
+    border:1px solid  black;
    display:flex;
  
     border-radius: 20px;
@@ -261,153 +313,11 @@ cursor: pointer;
 }
 
 .first{
-    width: 19%;
+    width: 23%;
   border: 1px solid grey;
-    /* border-radius: 15px; */
+    /* margin-left: 5px; */
    text-align: center;
    padding-top: 10px;
 }
 
 
-/* newly added items css */
-
-#container{
-    margin-top: 40px;
-    height:450px;
-    width:98%;
-    display: flex;
-   justify-content: space-between;
-   margin: auto;
-   
-}
-#productDiv{
-    height:440px;
-    width:220px;
-    /* border:1px solid green; */
-    margin-top: 5px;
-    margin-left: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding-left: 10px;
-}
-p:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-#imgDiv img{
-    height:200px;
-    width:200px;
-    margin-top: 5px;
-    /* border: 1px solid  orangered; */
-}
-img:hover{
- cursor: pointer;
-}
-
-#starDiv{
-    display: flex;
-    height:30px;
-    width:150px;
-   /* border:1px solid green */
-}
-#starDiv:hover{
-    cursor: pointer;
-}
-#starDiv span:hover{
-    text-decoration: underline;
-}
-i{
-color: orangered;
-}
-button{
-    height:40px;
-    width:200px;
-    background-color: white;
-    border: 3px solid orangered;
-    font-size: 20px;
-    color: orangered;
-}
-button:hover{
-    background-color: orangered;
-    color: white;
-}
-
-#related{
-  height:50px;
-  width:200px;
-  border:none;
-  margin: auto;
- margin-top: 120px;
-  
-}
-#related h2{
-   font-size: 25px;
-  font-weight: normal;
-  text-align: center;
-  color: #333;
-  font-family: helvetica-neue-light,Helvetica Neue,Helvetica,Arial,sans-serif;
-  border-bottom:3px solid orangered;
-}
-#related_searches{
-  height:50px;
-  width:1050px;
-  
-  margin: auto;
-  display: flex;
-  gap: 10px;
-
-}
-
-#relatedDiv{
-  margin-top: 10px;
-  margin: auto;
-height:40px;
-width:190px;
-border:1px solid grey;
-border-radius: 20px;
-text-align: center;
-color: #333;
-justify-content: space-evenly;
-background-color: white;
- 
-}
-#relatedDiv img{
- height:15px;
- width:15px;
- margin-top: 8px;
- transform:rotate(270deg)
-  
-}
-#relatedDiv span:hover{
-  text-decoration: underline;
-}
-
-#relatedProducts{
-  height:360px;
-  width:80%;
-  
-  display: flex;
-  gap:15px;
-  margin:auto;
-  padding: 10px;
-}
-#relatedproductDiv{
-  height:360px;
-  width:320px;
-   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 2px;
-}
-#relatedproductDiv h4{
-  color:rgb(41, 39, 39);
-}
-
-#view{
-  margin-top: 10px;
-color: #3e7697;
-  
-}
-#view:hover{
-  cursor: pointer;
-  text-decoration:none;
-}
-/* ending added items css */
