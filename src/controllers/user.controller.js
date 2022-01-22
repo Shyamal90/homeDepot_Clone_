@@ -14,9 +14,10 @@ router.post("/",async(req,res)=>{
     }
 })
 
-router.post("/email" ,async(req,res)=>{
+router.get("/:email" ,async(req,res)=>{
     try{
-        const user=await User.findOne({ email: req.body.email }).lean().exec();
+        console.log(req.params.email);
+        const user=await User.findOne({ email: req.params.email });
         return res.send(user)
     }catch(err){
         console.log(err)

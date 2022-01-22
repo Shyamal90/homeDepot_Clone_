@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <style></style>
+  <body>
     <form action="/address" method="post">
-        <label for="first_name">First Name</label>
-        <input type="text" value="" name="first_name" id="first_name" oninput="getemail()"/>
-        <label for="last_name">Enter Last Name</label>
-        <input type="text" value="" name="last_name" id="last_name"/>
-        <br>
-        <label for="phone_no">Phone</label>
-        <input type="text" value="" name="phone_no" id="phone_no"/>
-        
-        <br>
-        <label for="locality">Shipping Address</label>
-        <input type="text" value="" name="locality" id="locality"/>
-        <br>
-        <label for="pincode">ZIP Code</label>
-        <input type="text" value="" name="pincode" id="pincode"/>
-        <br>
-        <label for="user_id">User Id</label>
-        <input type="text" value="" name="user_id" id="user_id"/>
-        <input type="submit" value="Create"/>
+      <label for="first_name">Enter First Name</label>
+      <input
+        type="text"
+        value=""
+        name="first_name"
+        id="first_name"
+        onclick="getemail()"
+      />
+      <br />
+      <label for="last_name">Enter Last Name</label>
+      <input type="text" value="" name="last_name" id="last_name" />
+      <br />
+      <label for="phone_no">Phone</label>
+      <input type="number" value="" name="phone_no" id="phone_no" />
+
+      <br />
+      <label for="user_id">User Id</label>
+      <input type="text" value="" name="user_id" id="user_id" />
+      <label for="locality">Shipping Address</label>
+      <input type="text" value="" name="locality" id="locality" />
+      <br />
+      <label for="pin_code">ZIP Code</label>
+      <input type="number" value="" name="pin_code" id="pin_code" />
+      <br />
+      <input type="submit" value="Create" />
     </form>
-</body>
+  </body>
 </html>
 <script>
-    function getemail(){
-        // console.log(1);
-        let email="a@aa.com";
-        // let data={
-        //     email:email
-        // }
-        localStorage.setItem("UserEmail",JSON.stringify(email));
-        let a=JSON.parse(localStorage.getItem("UserEmail"));
-        console.log(a)
-        let fun1=async(req,res)=>{
-            const url=
-        }
-        // localStorage.setItem("UserEmail",JSON.stringify(email));
-    }
+  function getemail() {
+    console.log(1);
+    let email = "aditya@gmail.com";
+    localStorage.setItem("UserEmail", JSON.stringify(email));
+    let a = JSON.parse(localStorage.getItem("UserEmail"));
+    // console.log(a)
+
+    let details = async (a) => {
+      try {
+        let res = await fetch(`http://localhost:2345/users/${a}`);
+        let data = await res.json();
+        document.querySelector("#user_id").value = data._id;
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    details(a);
+  }
 </script>
