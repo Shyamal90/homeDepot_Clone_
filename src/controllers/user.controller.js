@@ -14,6 +14,15 @@ router.post("/",async(req,res)=>{
     }
 })
 
+router.post("/email" ,async(req,res)=>{
+    try{
+        const user=await User.findOne({ email: req.body.email }).lean().exec();
+        return res.send(user)
+    }catch(err){
+        console.log(err)
+    }
+})
+
 router.get("/", async (req,res)=>{
     try{
         const user= await User.find().lean().exec();
@@ -22,6 +31,8 @@ router.get("/", async (req,res)=>{
         console.log(err)
     }
 })
+
+
 
 
 module.exports = router;
