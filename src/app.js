@@ -16,8 +16,13 @@ app.use(express.static(static_path))
 app.set("view engine","ejs")
 app.use(express.urlencoded({extender:true}))
 app.use(express.static("public"))
-//for landing page
+
+//
 app.get("/",(req,res)=>{
+    res.render("index");
+})
+//for landing page
+app.get("/index",(req,res)=>{
     res.render("index");
 });
 
