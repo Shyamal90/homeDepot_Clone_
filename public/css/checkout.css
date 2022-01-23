@@ -119,3 +119,45 @@ Design Shipping Details By Shyamal
 End Desing of Shipping Code
 ===================================
 =================================== */
+#paypal{
+  vertical-align:top;
+}
+#btn1{
+  height:32px;
+  width:40%;
+  background-color:rgb(249,99,2)
+}
+#info{
+  font-size:12px;
+  font-weight:100;
+  margin-top:20px;
+}
+#creditDiv{
+  /* border:1px solid red; */
+  width:80%;
+  margin-left:8%;
+  display:none;
+}
+#crdno{
+  width:96%;
+  height:32px;
+  margin-bottom:2%;
+  margin-top:2%;
+}
+#creditDiv>label{
+  margin-top: 1%;
+}
+#creditDiv>select{
+  margin-top:2%;
+  width:20%;
+  height:30px;
+}
+#lbl2{
+  float:right;
+  margin-right:2%;
+}
+#cvvno{
+  width:30%;
+  height:24px;
+  margin-left:7%;
+}
