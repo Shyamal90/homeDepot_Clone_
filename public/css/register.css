@@ -60,7 +60,7 @@ form>input{
 
 #signinBtn{
 
-    width:100%;
+    width:270px;
     height:35px;
     margin-top:10px;
     background-color:rgb(249,99,2);
@@ -71,7 +71,7 @@ form>input{
 }
 
 #registerBtn{
-    width:100%;
+    width:270px;
     height:35px;
     margin-top:10px;
     background-color:rgb(249,99,2);
@@ -79,4 +79,20 @@ form>input{
     color:white;
     font-weight:bold;
     cursor: pointer;
+    border-bottom: 4px solid rgb(87, 38, 5);
+}
+
+#logOutBtn{
+    width:270px;
+    height:35px;
+    margin-top:10px;
+    background-color:rgb(249,99,2);
+    font-size:20px;
+    color:white;
+    font-weight:bold;
+    cursor: pointer;
+    border-bottom: 4px solid rgb(87, 38, 5);
+    border-top: none;
+    border-right: none;
+    border-left: none;
 }
