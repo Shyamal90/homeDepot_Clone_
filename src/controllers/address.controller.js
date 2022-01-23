@@ -23,17 +23,17 @@ router.post("/", async (req, res) => {
   try {
     console.log(req.body);
     const address = await Address.create(req.body);
-    return res.status(201).send(address);
+    // return res.status(201).send(address);
+    return res.render("checkout")
   } catch (err) {
     console.log(err);
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.get("/del", async (req, res) => {
   try{
-    console.log("del");
-    const address= await Address.findOneAndDelete({_id:req.params.id}).lean().exec();
-    return res.send(address);
+    console.log(11);
+    return res.render("checkout2");
   }catch(err){}
 })
 
