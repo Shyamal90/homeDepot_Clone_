@@ -12,7 +12,7 @@ router.get("",(req,res)=>{
 router.post("",async(req,res)=>{
     try {
         const {email,password} = req.body;
-        // console.log(email);
+       
 
         if(!email || !password){
             res.send("Please Filled the Details");

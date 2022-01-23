@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/list.css">
     <link rel="stylesheet" href="css/listMin.css">
+    <link rel="stylesheet" href="css/register.css">
     <!----------font awesome cdn ------------->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -131,6 +132,7 @@
                                 <div class="registrationBtn">
                                     <a href="/email_login" ><button id="signinBtn">Sign in</button></a>
                                     <a href="/register" ><button id="registerBtn">Register</button></a>
+                                    <a href="#" ><button id="logOutBtn">Logout</button></a>
                                 </div>
                                 <div class="otherSections">
                                     <ul>
@@ -465,17 +467,29 @@
 //        document.querySelector("#registrationBtn").style.display = 'none';
 //    }
 //    console.log(email);
-   document.querySelector("#myProfile").innerHTML = email;
+if(email){
+    document.querySelector("#myProfile").innerHTML = email;
 
-
+document.querySelector("#signinBtn").style.display="none"
+document.querySelector("#registerBtn").style.display="none"
+document.querySelector("#logOutBtn").style.display="block";
+}
+   
 //    document.querySelector(".registrationBtn").style.display = "none";
 
-   document.querySelector(".registrationBtn").innerHTML = `<button id="logOutBtn">Log out</button>`;
+//    document.querySelector(".registrationBtn").innerHTML = `<button id="logOutBtn">Log out</button>`;
 
    document.querySelector("#logOutBtn").addEventListener("click",()=>{
-         console.log("click");
+       console.log("click")
+        localStorage.removeItem("UserEmail")
+        
+     document.querySelector("#myProfile").innerHTML="My Account"
+   document.querySelector("#logOutBtn").style.display="none";
+   document.querySelector("#signinBtn").style.display="block"
+   document.querySelector("#registerBtn").style.display="block"
+        
    })
 </script>
 
-<script src="/script/profileUpdate.js"></script>
+<!-- <script src="/script/profileUpdate.js"></script> -->
 

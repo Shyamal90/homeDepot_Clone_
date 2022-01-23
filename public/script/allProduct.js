@@ -7,7 +7,7 @@
    console.log("productData",productsData)
    displayData(productsData);
   
-//    localStorage.setItem("productsData",JSON.stringify(productsData))
+   localStorage.setItem("productsData",JSON.stringify(productsData))
 }
 //   data();
 
@@ -206,8 +206,10 @@ function displayData(productArr){
         addToCartBtn.setAttribute("class","addToCartBtn");
         addToCartBtn.innerHTML = "Add to Cart";
         addToCartBtn.addEventListener("click",()=>{
-            window.location.href = "http://localhost:2345/products/description";
+         
+            console.log("productData line 210",productData)
             localStorage.setItem("products",JSON.stringify(productData));
+               window.location.href = "http://localhost:2345/products/description";
             
         })
         // hover effect

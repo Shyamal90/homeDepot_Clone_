@@ -1,13 +1,19 @@
+
+
 let cartStore = JSON.parse(localStorage.getItem("products")) || [];
-// console.log("cartStore",cartStore);
-let totalAmount = 0;
-let bag =[]
+let bag = JSON.parse(localStorage.getItem("cart")) || [];
 bag.push(cartStore)
+let cart =localStorage.setItem("cart",JSON.stringify(bag))
+
+// console.log("cart",cart)
+
+let totalAmount = 0;
+
  function displayData(bag){
-     console.log("bag",bag)
+    //  console.log("bag",bag)
     document.querySelector(".cartWrapper").innerHTML = ""; 
     bag.map((product)=>{
-       
+    //    console.log("product",product)
         let productContainer = document.createElement("div");
         productContainer.setAttribute("class","productContainer");
 
@@ -82,14 +88,16 @@ bag.push(cartStore)
         let removeItem = document.createElement("button");
         removeItem.setAttribute("class","removeItem");
         removeItem.innerHTML = "Remove";
+        console.log("product line no 91",product)
         removeItem.addEventListener("click",()=>{
-            deleteItem(index);
+             console.log("product line no 92",product)
+            deleteItem(product);
         })
 
         // Count total price
         totalAmount += Number(product.current_price);
         // totalAmount = totalAmount.toFixed(2);
-        console.log(totalAmount);
+        // console.log(totalAmount);
 
         localStorage.setItem("totalAmt", JSON.stringify(totalAmount));
 
@@ -113,16 +121,20 @@ bag.push(cartStore)
     })
  }
    
-    window.addEventListener("load",function(){
-        displayData(bag);
-    })
+  
 
-    function deleteItem(index){
-        console.log(index);
-
-        cartStore.splice(index,1);
-
-        localStorage.setItem("cartData",JSON.stringify(cartStore));
+    function deleteItem(product){
+        // console.log("product",product);
+       console.log("bag line 130",bag)
+    
+        bag.splice(product,1);
+        console.log(bag)
+        cart =localStorage.setItem("cart",JSON.stringify(bag))
+        bag = JSON.parse(localStorage.getItem("cart")) || [];
         displayData(bag);
         totalAmount = 0;
     }
+
+    window.addEventListener("load",function(){
+        displayData(bag);
+    })

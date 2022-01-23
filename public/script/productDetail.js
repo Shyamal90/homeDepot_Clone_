@@ -1,8 +1,9 @@
 let data = JSON.parse(localStorage.getItem("products"));
-
+console.log("data",data)
 
 let product=[]
 product.push(data)
+console.log("product ",product)
 displayProduct(product)
 
 function displayProduct(product){
