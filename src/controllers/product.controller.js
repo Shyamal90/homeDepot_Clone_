@@ -9,8 +9,11 @@ router.get("", crudController(Product).get);
 router.get("/all", crudController(Product).getpro);
 router.get("/description",async(req,res)=>{
     
-        res.render('product_description.ejs',)
+        res.render('product_description.ejs')
 
+})
+router.get("/cart",async(req,res)=>{
+           res.render('cart.ejs')
 })
 router.get("/:id", crudController(Product).getOne);
 router.patch("/:id", crudController(Product).updateOne);

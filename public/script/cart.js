@@ -1,11 +1,13 @@
-let cartStore = JSON.parse(localStorage.getItem("cartData")) || [];
-console.log(cartStore);
+let cartStore = JSON.parse(localStorage.getItem("products")) || [];
+// console.log("cartStore",cartStore);
 let totalAmount = 0;
-
- function displayData(cartStore){
+let bag =[]
+bag.push(cartStore)
+ function displayData(bag){
+     console.log("bag",bag)
     document.querySelector(".cartWrapper").innerHTML = ""; 
-    cartStore.map((product,index)=>{
-        console.log(product);
+    bag.map((product)=>{
+       
         let productContainer = document.createElement("div");
         productContainer.setAttribute("class","productContainer");
 
@@ -15,7 +17,7 @@ let totalAmount = 0;
 
         let productImg = document.createElement("img");
         productImg.setAttribute("class","productImg");
-        productImg.setAttribute("src",product.image);
+        productImg.setAttribute("src",product.main_image);
 
         imageContainer.append(productImg);
 
@@ -27,11 +29,11 @@ let totalAmount = 0;
 
         let productName = document.createElement("h4");
         productName.setAttribute("class","productName");
-        productName.innerHTML = product.name;
+        productName.innerHTML = product.product_name;
 
         let productPrice = document.createElement("p");
         productPrice.setAttribute("class","productPrice");
-        productPrice.innerHTML = Number(product.price).toFixed(2);
+        productPrice.innerHTML = Number(product.current_price).toFixed(2);
 
         box1.append(productName,productPrice);
 
@@ -85,7 +87,7 @@ let totalAmount = 0;
         })
 
         // Count total price
-        totalAmount += Number(product.price);
+        totalAmount += Number(product.current_price);
         // totalAmount = totalAmount.toFixed(2);
         console.log(totalAmount);
 
@@ -112,7 +114,7 @@ let totalAmount = 0;
  }
    
     window.addEventListener("load",function(){
-        displayData(cartStore);
+        displayData(bag);
     })
 
     function deleteItem(index){
@@ -121,6 +123,6 @@ let totalAmount = 0;
         cartStore.splice(index,1);
 
         localStorage.setItem("cartData",JSON.stringify(cartStore));
-        displayData(cartStore);
+        displayData(bag);
         totalAmount = 0;
     }

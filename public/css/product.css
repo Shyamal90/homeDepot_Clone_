@@ -296,24 +296,44 @@ cursor: pointer;
     margin-top: 18px;
 }
 
-.pagesbox{
+
+#centered{
     height:50px;
     width:250px;
-    /* border:1px solid black; */
     margin: auto;
+    border:1px solid black;
 }
-.pages{
-    height:40px;
-    width:180px;
-    border:1px solid  black;
-   display:flex;
- 
-    border-radius: 20px;
+.pagination{
+    display: flex;
+   
+  
+}
+.pagination div {
+  
+    /* float: left; */
+    margin: auto;
+    color: blue;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    
+  }
 
+#rightarrow{
+   
+    height:20px;
+    width:20px;
+   
+    transform: rotate(180deg);
 }
+  #main_active{
+      background-color: #f96302;
+      color: white;
+  }
 
 .first{
-    width: 23%;
+   width:100px;
   border: 1px solid grey;
     /* margin-left: 5px; */
    text-align: center;
