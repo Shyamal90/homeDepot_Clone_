@@ -1,0 +1,79 @@
+body{
+  margin:auto;
+}
+#header{
+width:80%;
+height:60px;
+margin:auto;
+margin-top:30px;   
+}
+#header>div{
+display:inline-block;
+}
+#checkout_container{
+  display: flex;
+}
+#mdiv1{
+/* border:1px solid red; */
+width:45%;
+display:inline-block;
+margin-left:10%;
+margin-top:2%;
+}
+#mdiv2{
+  border:1px solid red;
+  margin:50px;
+background-color: #E6E3E3;
+   height:500px;
+   width:450px;
+
+}
+
+#priceDiv{
+  height:50px;
+  width:200px;
+  margin:20px;
+  border:1px solid green;
+}
+.name{
+  display:inline-block;
+  width:46%;
+  /* border:1px solid red; */
+  margin-top:2%;
+}
+.name>input{
+  width:96%;
+  height:32px;
+}
+.name>label{
+font-size: 18px;
+  font-weight:400;
+  color:grey;
+}
+.adder{
+  margin-top:5%;
+  /* border:1px solid red; */
+  width:100%;
+}
+.adder>input{
+  width:96%;
+  height:32px;
+}
+.adder>label{
+font-size: 18px;
+  font-weight:400;
+  color:grey;
+}
+#paypal{
+  vertical-align:top;
+}
+#btn1{
+  height:32px;
+  width:40%;
+  background-color:rgb(249,99,2)
+}
+#info{
+  font-size:12px;
+  font-weight:100;
+  margin-top:20px;
+}
