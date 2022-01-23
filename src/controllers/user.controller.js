@@ -30,7 +30,6 @@ router.get("/:email",async(req,res)=>{
 router.post("/",async(req,res)=>{
     try {
         const user = await User.create(req.body);
-        console.log(user);
         res.status(201).json({user});
     } catch (error) {
         console.log(error);

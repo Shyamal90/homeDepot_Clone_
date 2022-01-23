@@ -21,7 +21,6 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
     const address = await Address.create(req.body);
     // return res.status(201).send(address);
     return res.render("checkout.ejs")

@@ -339,5 +339,8 @@ cursor: pointer;
    text-align: center;
    padding-top: 10px;
 }
+.addToCartBtn{
+    background-color:rgb(249,99,2)
+}
 
 
