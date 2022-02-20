@@ -90,7 +90,7 @@
   <li>Github: app3200</li>
   <li>Github Link: <a href= "https://github.com/app3200" >https://github.com/app3200</a></li>
   <li>Email: appattanaik3200@gmail.com </li>
-  <li>LinkedIn: <a href="https://linkedin.com/in/app3200"> </a></li>
+  <li>LinkedIn: <a href="https://linkedin.com/in/app3200"> https://linkedin.com/in/app3200</a></li>
 </ul>
 
 <br>
